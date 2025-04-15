@@ -1,0 +1,7 @@
+.terraform.lock.hcl
+.terraform/
+Creds.md
+terraform.tfstate
+6.data_keyvault.tf
+10.variables.tf
+terraform.tfvars
