@@ -108,7 +108,6 @@ git cherry-pick <commit id from branch  B>
     -Can delete selected commits   
     See using git reset we can delete some range of commits , for deleting individual commits, we can use this git squash
 4. Git LFS - Large File system, if we see in Git hub and in Git lab, max file size is 100mb. If file size is more than 100mb, it will not accept for push and will throw error. 
-<<<<<<< HEAD
 
 
 ## Class 4 
@@ -121,5 +120,3 @@ git cherry-pick <commit id from branch  B>
 7. Github Workflow syntax 
 
 ## Class 5
-=======
->>>>>>> fca3bf19f2ea17193544c16ffcee1d146445f5a6
