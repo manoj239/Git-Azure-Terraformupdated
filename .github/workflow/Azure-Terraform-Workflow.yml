@@ -1,0 +1,39 @@
+name: Workflow For Deploying Terraform on Azure
+on:
+  push:
+    branches:
+      - dev
+      - prod
+    paths-ignore:
+      - 'README.md'
+
+env:
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  ARM_TENANT_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  ARM_CLIENT_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  ARM_CLIENT_SECRET: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  TERRAFORM_DESTROY: "NO"
+
+jobs:
+ terraform-initiate:
+   if: ${{ vars.TERRAFORM_DESTROY == 'NO' }}
+   name: 'Terraform Initialization'
+   runs-on: ubuntu-latest
+   steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+         terraform_version: 1.9.8
+      - name: Terraform Init, Format, Validate
+        run: terraform init && terraform fmt && terraform validate
+
+  terraform-plan:
+
+
+  terraform-apply:
+
+  terraform destroy:
+
+      
