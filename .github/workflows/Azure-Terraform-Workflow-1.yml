@@ -46,13 +46,13 @@ jobs:
         with:
           terraform_version: 1.9.8  
       - name: Terraform Init, Format, Validate
-        run: terraform init && terraform fmt && terraform validate
+        run: terraform init && terraform fmt && terraform validate && echo $(hostname)
       - name: Print Branch Reference
         run: echo "The Current Branch Is $GITHUB_REF"
       - name: Terraform Plan
         if: env.TERRAFORM_DESTROY == 'NO'
         run: |
-          if [ ${GITHUB_REF} == "refs/heads/dev" ]; then
+          if [ ${GITHUB_REF} == 'refs/heads/dev' ]; then
             echo "Running Terraform Plan For Development Environment"
             terraform plan 
           fi 
@@ -74,11 +74,13 @@ jobs:
         with:
           terraform_version: 1.9.8
       - name: Print Branch Reference
-        run: echo "The Current Branch Is $GITHUB_REF"
+        run: echo The Current Branch Is $GITHUB_REF
+      - name: Terraform Init
+        run: terraform init && echo $(hostname)
       - name: Terraform Apply
         if: env.TERRAFORM_DESTROY == 'NO'
         run: |
-          if [ ${GITHUB_REF} == "refs/heads/dev" ]; then
+          if [ ${GITHUB_REF} == 'refs/heads/dev' ]; then
             echo "Running Terraform Apply  For Development Environment"
             terraform apply --auto-approve
             terraform state list 

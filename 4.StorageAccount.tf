@@ -1,3 +1,14 @@
+resource "azurerm_storage_account" "devsecopsmanojtfdemo001" {
+  name                     = "devsecopsmanojtfdemo001"
+  resource_group_name      = azurerm_resource_group.Enclave1.name
+  location                 = azurerm_resource_group.Enclave1.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+   tags = {
+    environment = "Dev"
+  }
+}
 resource "azurerm_storage_account" "devsecopsmanojtfstate" {
   name                     = "devsecopsmanojtfstate"
   resource_group_name      = azurerm_resource_group.Enclave1.name
