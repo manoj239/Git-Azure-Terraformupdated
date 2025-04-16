@@ -78,7 +78,7 @@ jobs:
       - name: Terraform Apply
         if: env.TERRAFORM_DESTROY == 'NO'
         run: |
-          if [ ${GITHUB_REF} == "refs/heads/development" ]; then
+          if [ ${GITHUB_REF} == "refs/heads/dev" ]; then
             echo "Running Terraform Apply  For Development Environment"
             terraform apply --auto-approve
             terraform state list 
