@@ -11,7 +11,8 @@ terraform {
     resource_group_name  = "Enclave1"
     storage_account_name = "devsecopsmanojtfstate"
     container_name       = "tfstate"
-    key                  = "terraform.tfstate"
+    #key                  = "terraform.tfstate"
+    key                  = "githubactions.tfstate"
   }
 }
 
