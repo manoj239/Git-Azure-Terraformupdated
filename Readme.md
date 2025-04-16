@@ -22,6 +22,7 @@ terraform apply
 terraform apply  --auto-approve
 terraform apply  --auto-approve
 
+
 terraform state list
 terraform state show azurerm_subnet.subnet1
 terraform state rm azurerm_storage_account.devsecopsb43devtfstate
