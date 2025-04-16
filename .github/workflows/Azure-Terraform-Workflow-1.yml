@@ -27,7 +27,7 @@ jobs:
          with:
            terraform_version: 1.9.8
        - name: Terraform Version Check
-         run: terraform version
+         run: terraform version && echo $(hostname)
  
   terraform-plan:
     if: ${{ vars.TERRAFORM_DESTROY == 'NO' }}
