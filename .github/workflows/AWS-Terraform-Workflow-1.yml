@@ -12,6 +12,7 @@ env:
   AWS_DEFAULT_REGION: "us-east-1"
   TERRAFORM_DESTROY: "NO"
 
+ 
 jobs:
   terraform-initiate:
     if: ${{ vars.TERRAFORM_DESTROY == 'NO' && ${GITHUB_REF} == 'refs/heads/aws-dev' }}
