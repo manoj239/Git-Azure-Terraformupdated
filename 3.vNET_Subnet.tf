@@ -10,6 +10,9 @@ resource "azurerm_virtual_network" "vnet1" {
     #environment = "Dev"
     environment = var.env
   }
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "azurerm_subnet" "subnet1" {
