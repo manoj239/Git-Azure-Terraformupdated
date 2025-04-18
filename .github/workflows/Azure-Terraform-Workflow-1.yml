@@ -105,7 +105,8 @@ jobs:
          if [ ${GITHUB_REF} == 'refs/heads/dev' ]; then
            echo "Running Terraform Destroy For Development Environment"
            terraform init && terraform destroy --auto-approve
-         fi       
+         fi    
+   
  
   
 

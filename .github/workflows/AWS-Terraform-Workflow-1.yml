@@ -81,6 +81,7 @@ jobs:
             terraform apply --auto-approve
             terraform state list 
           fi  
+  
   terraform-destroy:
     if: ${{ (github.head_ref == 'aws-dev') && (vars.TERRAFORM_DESTROY == 'YES') }}
     name: 'Terraform Destroy'
