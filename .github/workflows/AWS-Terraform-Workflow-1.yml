@@ -25,7 +25,7 @@ jobs:
          uses: hashicorp/setup-terraform@v1
          with:
            terraform_version: 1.9.8
-       - name: Terraform Version Check
+       - name: Terraform Version Checking
          run: terraform version && echo $(hostname)
 
   terraform-plan:
